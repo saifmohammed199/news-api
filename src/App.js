@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Home from './components/home'
+import './App.css'
+import 'tachyons'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Us from './components/us'
+import India from './components/india'
+import Turkey from './components/turkey'
+import More from './components/more'
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className='App'>
+        <Route exact path='/' component={Home} />
+        <Route path='/india' component={India} />
+        <Route path='/us' component={Us} />
+        <Route path='/turkey' component={Turkey} />
+        <Route path='/more' component={More} />
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
